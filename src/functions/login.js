@@ -39,7 +39,7 @@ module.exports.login = async (event, context) => {
         payload: {
           username: userResult.Items[0].pk,
         },
-      });
+      }, process.env.JWT_SECRET);
       return {
         statusCode: 200,
         body: JSON.stringify({
